@@ -9,7 +9,7 @@ GetAleData <- function(object, xnames=NULL, order=1, grid.size=20, parallel=FALS
     pred.fun <- function(model, newdata) { do.call('rbind',predict(model,newdata=newdata,type='prob'))[,2] }
   }
   if(CLASS==FALSE) {
-    pred.fun <- function(model,newdata) { predict(object)[,1] }
+    pred.fun <- function(model,newdata) { predict(model,newdata=newdata)[,1] }
   }
   input = object@data@get("input")
   if(order==2 & length(xnames)!=2) stop("for 2nd order ALE, xnames should be of length 2")
@@ -21,7 +21,7 @@ GetAleData <- function(object, xnames=NULL, order=1, grid.size=20, parallel=FALS
   if(order==1) {
     foo <- function(feat) {
       temp <- iml::FeatureEffect$new(predictor, feature=feat, method='ale', grid.size=grid.size)$results
-      res <- data.frame(cat=as.character(temp[,feat]), ale=temp[,'.value'], var=rep(feat,nrow(temp)))
+      res <- data.frame(var=rep(feat,nrow(temp)), cat=as.character(temp[,feat]), value=temp[,'.value'])
       return(res)
     }
     ale <- plyr::alply(xnames, 1, .fun=foo, .parallel=parallel, .paropts=list(.packages="iml"))
@@ -32,7 +32,7 @@ GetAleData <- function(object, xnames=NULL, order=1, grid.size=20, parallel=FALS
   }
   if(order==2) {
     ale <- iml::FeatureEffect$new(predictor, feature=xnames, method='ale')$results
-    ale <- data.frame(ale[,xnames], ale=ale[,'.value'])
+    ale <- data.frame(ale[,xnames], value=ale[,'.ale'])
   }
   return(ale)
 }
