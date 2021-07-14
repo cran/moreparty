@@ -41,7 +41,7 @@ summary(titanic)
 BivariateAssoc(titanic$Survived, titanic[,-1])
 
 ## ----catdesc------------------------------------------------------------------
-catdesc(titanic$Survived, titanic[,-1], min.phi=0.1)
+catdesc(titanic$Survived, titanic[,-1], min.phi=0.1, robust=FALSE)
 
 ## ----seed---------------------------------------------------------------------
 set.seed(1912)
@@ -113,7 +113,7 @@ plot(surro$tree, inner_panel=node_inner(surro$tree,id=FALSE,pval=FALSE), termina
 importance <- -varImpAUC(foret)
 importance %>% round(3)
 
-ggVarImp(importance)
+ggVarImp(-importance)
 
 ## ----pdp, eval=FALSE----------------------------------------------------------
 #  pdep <- GetPartialData(foret, which.class=2, probs=1:19/20, prob=TRUE)
@@ -236,9 +236,9 @@ arrange(out$outliers, Survived, desc(scores)) %>%
 featsel$selection.0se
 featsel$selection.1se
 
-## ----parallel, results='hold'-------------------------------------------------
-library(doParallel)
-registerDoParallel(cores=2)
-fastvarImpAUC(foret)
-stopImplicitCluster()
+## ----parallel, eval=FALSE-----------------------------------------------------
+#  library(doParallel)
+#  registerDoParallel(cores=2)
+#  fastvarImpAUC(foret)
+#  stopImplicitCluster()
 
