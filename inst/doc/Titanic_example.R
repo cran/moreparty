@@ -196,7 +196,8 @@ ggplot(pdep_sexage, aes(Age, yhat)) +
 
 ## ----pd_plot_inter3, eval=FALSE-----------------------------------------------
 #  cols <- c(paste0('dodgerblue',c(4,3,1)),paste0('tomato',c(4,3,1)))
-#  pdep_sexclassage %>% mutate(sexclass = interaction(Pclass,Sex)) %>%
+#  pdep_sexclassage %>% data.frame %>%
+#                       mutate(sexclass = interaction(Pclass,Sex)) %>%
 #                       ggplot(aes(x=Age, y=yhat)) +
 #                         geom_line(aes(colour=sexclass)) +
 #                         scale_color_manual(values=cols) +
