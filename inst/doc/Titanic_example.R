@@ -17,7 +17,7 @@ opts_knit$set(width=75)
 load(url('http://nicolas.robette.free.fr/Docs/results_titanic.RData'))
 
 ## ----init, cache=FALSE--------------------------------------------------------
-library(tidyverse)  # data management
+library(dplyr)  # data management
 library(caret)  # confusion matrix
 library(party)  # conditional inference random forests and trees
 library(partykit)  # conditional inference trees
@@ -28,7 +28,7 @@ library(pdp)  # partial dependence
 library(vip)  # measure of interactions
 library(moreparty)  # surrogate trees, accumulated local effects, etc.
 library(RColorBrewer)  # color palettes
-library(GDAtools)  # bivariate analysis
+library(descriptio)  # bivariate analysis
 
 ## ----import_tita--------------------------------------------------------------
 data(titanic)
@@ -41,7 +41,7 @@ summary(titanic)
 BivariateAssoc(titanic$Survived, titanic[,-1])
 
 ## ----catdesc------------------------------------------------------------------
-catdesc(titanic$Survived, titanic[,-1], min.phi=0.1, robust=FALSE)
+catdesc(titanic$Survived, titanic[,-1], limit = 0.1, robust = FALSE, na.rm.cont = TRUE)
 
 ## ----seed---------------------------------------------------------------------
 set.seed(1912)
