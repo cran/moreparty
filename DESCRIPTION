@@ -1,11 +1,11 @@
 Package: moreparty
 Type: Package
 Title: A Toolbox for Conditional Inference Trees and Random Forests
-Version: 0.3.1
+Version: 0.3.2
 Depends: R (>= 3.5.0), party
 Imports: partykit, varImp, plyr, foreach, measures, methods, MASS, iml,
-        pdp, vip, ggplot2, rlang, shiny, shinyWidgets, rclipboard, DT,
-        datamods, phosphoricons
+        pdp, vip (>= 0.4.0), ggplot2, rlang, shiny, shinyWidgets,
+        rclipboard, DT, datamods, phosphoricons
 Suggests: doParallel, knitr, rmarkdown, rmdformats, descriptio,
         RColorBrewer, caret, pROC, dplyr, e1071
 VignetteBuilder: knitr
@@ -17,6 +17,6 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
 NeedsCompilation: no
-Packaged: 2023-04-02 12:30:28 UTC; nicolas
+Packaged: 2023-08-09 13:18:09 UTC; nicolas
 Repository: CRAN
-Date/Publication: 2023-04-02 13:20:02 UTC
+Date/Publication: 2023-08-09 13:40:02 UTC
