@@ -1,6 +1,6 @@
-396208b478b94c75407544e9bb0bae63 *DESCRIPTION
+431dbef2971b8da4d261cd8fee0c5255 *DESCRIPTION
 4761c24b0aa9d35172745230d5a05caa *NAMESPACE
-eee1fad05b12f6b472000b84f32adb38 *NEWS.md
+553872390137fcebdae19b5939a0a8ec *NEWS.md
 b534a6041c75e3ac6587cf89e0a0c94c *R/ALT.R
 8c78e2c0eed982685d4a59264e8e417b *R/BivariateAssoc.R
 b054115e1709f4b78cc8e2b6904668a8 *R/EasyTreeVarImp.R
@@ -33,7 +33,7 @@ fa2d65b58ff0892b7124cf5cfcef043b *build/vignette.rds
 5ecdfd3af9c74191434400e7ff128745 *data/titanic.RData
 ea4cf7475108e6f9916d389c6e02932d *inst/doc/Titanic_example.R
 90007a09575281e7d848bab247addaac *inst/doc/Titanic_example.Rmd
-778e338fc18118fca36cd32dc0da4bc4 *inst/doc/Titanic_example.html
+c6038fe724e50bb6ecffcdd1ebd2ef4e *inst/doc/Titanic_example.html
 dcad8798c74e1402bf9bf872d5c2670f *man/BivariateAssoc.Rd
 36eceddf2768585896c5a816cb8fcd75 *man/EasyTreeVarImp.Rd
 599a477744aca2f90250599d48aaeeaf *man/FeatureSelection.Rd
