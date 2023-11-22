@@ -1,3 +1,19 @@
+# moreparty 0.4
+
+## New function
+
+* `NodeTreePlot()`: plots the results of each node of a conditional inference tree
+* `PerfsRegression()`: performance measures for regression tasks
+* `PerfsBinClassif()`: performance measures for binary classification tasks
+* `NodesInfo()`: informations for each terminal node of a conditional inference tree
+* `TreeStab()`: assesses the stability of a conditional inference tree by using bootstrap replications
+
+## Changes in existing functions:
+
+* `NiceTreePlot()`: new arguments (cex and justmin)
+* `GetSplitStats()`: new summary element in the results + the function is no longer compatible with trees from the `party` package
+
+
 # moreparty 0.3.3 [CRAN]
 
 * dependency to 0.4.1 version of `vip` package 

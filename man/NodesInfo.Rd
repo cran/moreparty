@@ -1,21 +1,22 @@
-\name{NiceTreePlot}
-\alias{NiceTreePlot}
+\name{NodesInfo}
+\alias{NodesInfo}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Plots conditional inference trees.
+Informations about terminal nodes
 }
 \description{
-Plots a \code{partykit} conditional inference tree in a pretty and simple way.
+Retrieves informations about terminal nodes of a conditional inference tree : node id, rule set, frequency, prediction or class probabilities.
 }
 \usage{
-NiceTreePlot(ct, inner_plots = FALSE, cex = 0.8, justmin = 15)
+NodesInfo(ct)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{ct}{A tree of class \code{constparty} (as returned by \code{ctree} from \code{partykit} package).}
-  \item{inner_plots}{Logical. If TRUE, plots are displayed at each inner node. Default is FALSE.}
-  \item{cex}{Numerical value. Multiplier applied to fontsize. Default is 0.8.}
-  \item{justmin}{Numerical value. Minimum average edge label length to employ justification (see \code{panelfunctions} documentation from \code{partykit} package)}
+}
+
+\value{
+A data frame.
 }
 
 \references{
@@ -37,7 +38,7 @@ Nicolas Robette
   iris2 = iris
   iris2$Species = factor(iris$Species == "versicolor")
   iris.ct = partykit::ctree(Species ~ ., data = iris2)
-  NiceTreePlot(iris.ct, inner_plots = TRUE)
+  NodesInfo(iris.ct)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
